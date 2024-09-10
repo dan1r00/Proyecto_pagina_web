@@ -30,25 +30,40 @@
 
     <div class="categorias">
         <div class="categoria">
-            <img src= "" alt="Remeras">
+            <img src=""  alt="Remeras">
             <p>Remeras</p>
         </div>
         <div class="categoria">
-            <img src= "" alt="Buzos">
+            <img src=""alt="Buzos">
             <p>Buzos</p>
         </div>
         <div class="categoria">
-            <img src="" alt="Pantalones">
+            <img src=""alt="Pantalones">
             <p>Pantalones</p>
         </div>
         <div class="categoria">
-            <img src="" alt="Entrenamiento">
+            <img src=""alt="Entrenamiento">
             <p>Ropa de Entrenamiento</p>
         </div>
         <div>
-            <img src="" alt="Zapatillas">
+            <img src=""alt="Zapatillas">
             <p>Zapatillas</p>
         </div>
     </div>
+    <script>
+        function searchProducts(){
+            var input, filter, categorias, categoria, p, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            categorias = document.getElementById ("categorias");
+            categoria = categorias.getElementsByClassName ('categoria');
+
+            for (i = 0; i < categoria.length; i++) {
+                p = categoria[i].getElementsByTagName("p")[0];
+                txtValue = p.textContent || p.innerText;
+                if()
+            }  
+        }
+    </script>
 </body>
 </html>
