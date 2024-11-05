@@ -75,7 +75,7 @@ header {
     background-color: #191654;
 }
 
-.cart-icon img {
+.carrito-icon img {
     width: 24px;
     height: 24px;
     margin-left: 15px;
@@ -139,12 +139,12 @@ header {
     background-color: #191654;
 }
 
-#cart-items {
+#carrito-items {
     list-style-type: none;
     padding: 0;
 }
 
-#cart-items li {
+#carrito-items li {
     padding: 5px 0;
 }
 
