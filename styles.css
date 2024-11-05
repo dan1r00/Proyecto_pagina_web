@@ -1,9 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #43C6AC;
-    background: -webkit-linear-gradient(to right, #191654, #43C6AC);  
-    background: linear-gradient(to right, #191654, #43C6AC); 
+    background: linear-gradient(to right, #191654, #43C6AC);
     animation: moveBackground 10s ease-in-out infinite alternate;
     background-size: 400% 400%;
 }
@@ -22,12 +20,18 @@ header {
     padding: 10px 0;
 }
 
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
 .menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
 }
 
 .menu ul li {
@@ -44,12 +48,45 @@ header {
     color: #43C6AC;
 }
 
-.main-image {
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.search-container input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.search-button {
+    background-color: #43C6AC;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #191654;
+}
+
+.cart-icon img {
+    width: 24px;
+    height: 24px;
+    margin-left: 15px;
+}
+
+.panel-imagen {
     text-align: center;
     margin: 20px 0;
 }
 
-.main-image img {
+.panel-imagen img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
@@ -60,6 +97,7 @@ header {
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+    padding: 20px;
 }
 
 .producto {
@@ -86,4 +124,32 @@ header {
 .producto p {
     font-size: 16px;
     color: #43C6AC;
+}
+
+.agregar-al-carrito {
+    background-color: #43C6AC;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.agregar-al-carrito:hover {
+    background-color: #191654;
+}
+
+#cart-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart-items li {
+    padding: 5px 0;
+}
+
+#total {
+    font-size: 18px;
+    color: #191654;
+    font-weight: bold;
 }
