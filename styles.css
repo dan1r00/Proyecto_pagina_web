@@ -173,14 +173,20 @@ header {
     color: #191654;
     font-weight: bold;
 }
-.bienvenida {
-    position: relative;
+.bienvenida {margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000428;
+    background: -webkit-linear-gradient(to right, #004e92, #000428);
+    background: linear-gradient(to right, #004e92, #000428); 
+    animation: moveBackground 10s ease-in-out infinite alternate;
+    background-size: 400% 400%;
+    /*position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px;
     background-color: #2c2f47;
-    color: white;
+    color: white;*/
 }
 
 .bienvenida-texto {
