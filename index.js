@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.agregar-al-carrito').forEach(button => {
         button.addEventListener('click', () => {
             const name = button.dataset.nombre;
-            const price = parseFloat(button.dataset.precio || 0); 
+            const price = parseFloat(button.dataset.precio || 0);
 
             cart.push({ name, price });
             updateCart();
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         total.textContent = totalPrice.toFixed(2);
     }
 
+    // Código para la búsqueda de productos
     document.getElementById('search').addEventListener('input', function (event) {
         const searchTerm = event.target.value.toLowerCase();
         const products = document.querySelectorAll('.producto');
@@ -40,4 +41,20 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    let desplazamiento = 0;
+
+    function moverProductos(direccion) {
+        const contenedor = document.querySelector('.ofertas-contenedor');
+        const anchoProducto = contenedor.querySelector('.producto').offsetWidth;
+        desplazamiento += direccion * anchoProducto;
+
+        const maxDesplazamiento = -contenedor.scrollWidth + contenedor.clientWidth;
+        desplazamiento = Math.max(maxDesplazamiento, Math.min(0, desplazamiento));
+
+        contenedor.style.transform = `translateX(${desplazamiento}px)`;
+    }
+
+    document.querySelector('.navegacion-flecha.izquierda').addEventListener('click', () => moverProductos(-1));
+    document.querySelector('.navegacion-flecha.derecha').addEventListener('click', () => moverProductos(1));
 });

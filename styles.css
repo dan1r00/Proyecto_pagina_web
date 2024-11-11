@@ -9,12 +9,8 @@ body {
 }
 
 @keyframes moveBackground {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 
 header {
@@ -35,10 +31,7 @@ header {
     gap: 10px;
 }
 
-.logo img {
-    width: 30px;
-    height: 30px;
-}
+.logo img { width: 30px; height: 30px; }
 
 .logo span {
     color: white;
@@ -60,9 +53,7 @@ header {
     font-size: 18px;
 }
 
-.menu-items li a:hover {
-    color: #43C6AC;
-}
+.menu-items li a:hover { color: #43C6AC; }
 
 .iconos-derecha {
     display: flex;
@@ -92,43 +83,38 @@ header {
     cursor: pointer;
 }
 
-.search-button:hover {
-    background-color: #191654;
+.search-button:hover { background-color: #191654; }
+
+.carrito-icon img { width: 24px; height: 24px; }
+
+.bienvenida {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: white;
+    background: linear-gradient(to right, #004e92, #000428);
+    animation: moveBackground 5s ease-in-out infinite alternate;
+    background-size: 400% 400%;
 }
 
-.carrito-icon img {
-    width: 24px;
-    height: 24px;
-}
-
-.panel-imagen {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.panel-imagen img {
-    max-width: 100%;
-    height: auto;
+.bienvenida-texto {
+    background-color: #6a5acd;
+    color: white;
+    padding: 20px;
     border-radius: 10px;
+    text-align: center;
+    max-width: 250px;
 }
+
 .ofertas {
     padding: 20px;
-    background: #8e9eab;
-    background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
     background: linear-gradient(to right, #eef2f3, #8e9eab);
-    animation: moveBackground 3s ease-in-out infinite alternate;
-    background-size: 400% 400%;
     border-radius: 10px;
+    position: relative;
 }
 
-@keyframes moveBackground {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
-}
 .ofertas h2 {
     text-align: left;
     font-size: 24px;
@@ -136,12 +122,11 @@ header {
     margin-bottom: 20px;
 }
 
-.productos {
+.ofertas-contenedor {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
 }
 
 .producto {
@@ -152,7 +137,6 @@ header {
     text-align: center;
     width: 200px;
     margin: 10px;
-    display: inline-block;
 }
 
 .producto img {
@@ -181,94 +165,25 @@ header {
     cursor: pointer;
 }
 
-.agregar-al-carrito:hover {
-    background-color: #191654;
-}
-
-#carrito-items {
-    list-style-type: none;
-    padding: 0;
-}
-
-#carrito-items li {
-    padding: 5px 0;
-}
-
-#total {
-    font-size: 18px;
-    color: #191654;
-    font-weight: bold;
-}
-.bienvenida { 
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    color: white;
-    background: #000428;  
-    background: -webkit-linear-gradient(to right, #004e92, #000428);  
-    background: linear-gradient(to right, #004e92, #000428); 
-    animation: moveBackground 5s ease-in-out infinite alternate;
-    background-size: 400% 400%;
-}
-
-@keyframes moveBackground {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
-}
-
-.bienvenida-texto {
-    background-color: #6a5acd;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    transform: translate(-10%, -10%);
-    text-align: center;
-    max-width: 250px;
-}
-
-.bienvenida-subtitulo {
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.bienvenida-titulo {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.bienvenida-disponible {
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-.bienvenida-boton {
-    background-color: white;
-    color: #6a5acd;
+.navegacion-flecha {
+    background: none;
     border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
+    font-size: 24px;
+    color: #191654;
     cursor: pointer;
-    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
 }
 
-.bienvenida-boton:hover {
-    background-color: #483d8b;
-    color: white;
+.navegacion-flecha.izquierda {
+    left: 10px;
 }
 
-.bienvenida-imagen img {
-    width: 100%;
-    border-radius: 10px;
+.navegacion-flecha.derecha {
+    right: 10px;
 }
+
 
 
