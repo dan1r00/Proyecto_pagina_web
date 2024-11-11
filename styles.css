@@ -113,24 +113,29 @@ header {
 }
 .ofertas {
     padding: 20px;
-    background-color: #141414; 
-    color: #fff;
-    text-align: center;
+    background: #8e9eab;
+    background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
+    background: linear-gradient(to right, #eef2f3, #8e9eab);
+    animation: moveBackground 3s ease-in-out infinite alternate;
+    background-size: 400% 400%;
+    border-radius: 10px;
 }
 
-.ofertas-titulo {
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+.ofertas h2 {
+    text-align: left;
     font-size: 24px;
-    font-weight: bold;
+    color: #191654;
     margin-bottom: 20px;
-    color: #ffffff;
 }
 
-.ofertas-contenedor {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 15px;
-}
 .productos {
     display: flex;
     justify-content: center;
@@ -139,19 +144,15 @@ header {
     padding: 20px;
 }
 
-.producto {background-color: #1c1c1c;
-    border-radius: 10px;
-    padding: 10px;
-    width: 150px;
-    text-align: center;
-    transition: transform 0.2s;
-    /*
+.producto {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
     text-align: center;
-    width: 200px;*/
+    width: 200px;
+    margin: 10px;
+    display: inline-block;
 }
 
 .producto img {
