@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.agregar-al-carrito').forEach(button => {
         button.addEventListener('click', () => {
             const name = button.dataset.nombre;
-            const price = parseFloat(button.dataset.precio || 0);
+            const price = parseFloat(button.dataset.precio || 0); 
 
             cart.push({ name, price });
             updateCart();
@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
         total.textContent = totalPrice.toFixed(2);
     }
 
-    // Código para la búsqueda de productos
     document.getElementById('search').addEventListener('input', function (event) {
         const searchTerm = event.target.value.toLowerCase();
         const products = document.querySelectorAll('.producto');
@@ -42,19 +41,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Lógica para las flechas
+    const ofertasContenedor = document.querySelector('.ofertas-contenedor');
+    const productos = document.querySelectorAll('.producto');
     let desplazamiento = 0;
 
-    function moverProductos(direccion) {
-        const contenedor = document.querySelector('.ofertas-contenedor');
-        const anchoProducto = contenedor.querySelector('.producto').offsetWidth;
-        desplazamiento += direccion * anchoProducto;
+    document.getElementById('flechaDerecha').addEventListener('click', () => {
+        if (desplazamiento > -(productos.length - 4) * 100) {
+            desplazamiento -= 100;
+            ofertasContenedor.style.transform = `translateX(${desplazamiento}%)`;
+        }
+    });
 
-        const maxDesplazamiento = -contenedor.scrollWidth + contenedor.clientWidth;
-        desplazamiento = Math.max(maxDesplazamiento, Math.min(0, desplazamiento));
-
-        contenedor.style.transform = `translateX(${desplazamiento}px)`;
-    }
-
-    document.querySelector('.navegacion-flecha.izquierda').addEventListener('click', () => moverProductos(-1));
-    document.querySelector('.navegacion-flecha.derecha').addEventListener('click', () => moverProductos(1));
+    document.getElementById('flechaIzquierda').addEventListener('click', () => {
+        if (desplazamiento < 0) {
+            desplazamiento += 100;
+            ofertasContenedor.style.transform = `translateX(${desplazamiento}%)`;
+        }
+    });
 });

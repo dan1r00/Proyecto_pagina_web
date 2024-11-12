@@ -45,8 +45,9 @@
 
     <section class="ofertas">
         <h2 class="ofertas-titulo">Ofertas</h2>
-        <button class="navegacion-flecha izquierda" onclick="moverProductos(-1)">⬅️</button>
-        <div class="ofertas-contenedor">
+        <div class="ofertas-navegacion">
+            <button class="ofertas-flecha" id="flechaIzquierda">⬅️</button>
+            <div class="ofertas-contenedor">
             <div class="producto">
                 <img src="" alt="Producto 1">
                 <h3>Producto 1</h3>
@@ -84,7 +85,7 @@
                 <button class="agregar-al-carrito" data-nombre="Producto6">Agregar al carrito</button>
             </div>
         </div>
-        <button class="navegacion-flecha derecha" onclick="moverProductos(1)">➡️</button>
+        <button class="ofertas-flecha" id="flechaDerecha">➡️</button>
     </section>
 
     <script src="index.js"></script>

@@ -112,14 +112,25 @@ header {
     padding: 20px;
     background: linear-gradient(to right, #eef2f3, #8e9eab);
     border-radius: 10px;
-    position: relative;
 }
 
-.ofertas h2 {
+.ofertas-titulo {
     text-align: left;
     font-size: 24px;
     color: #191654;
     margin-bottom: 20px;
+}
+
+.ofertas-navegacion {
+    display: flex;
+    align-items: center;
+}
+
+.ofertas-flecha {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .ofertas-contenedor {
@@ -164,26 +175,3 @@ header {
     border-radius: 5px;
     cursor: pointer;
 }
-
-.navegacion-flecha {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #191654;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-}
-
-.navegacion-flecha.izquierda {
-    left: 10px;
-}
-
-.navegacion-flecha.derecha {
-    right: 10px;
-}
-
-
-
