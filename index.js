@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.agregar-al-carrito').forEach(button => {
         button.addEventListener('click', () => {
             const name = button.dataset.nombre;
-            const price = parseFloat(button.dataset.precio || 0); 
+            const price = parseFloat(button.dataset.precio || 0);
 
             cart.push({ name, price });
             updateCart();
@@ -41,22 +41,46 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Lógica para las flechas
     const ofertasContenedor = document.querySelector('.ofertas-contenedor');
-    const productos = document.querySelectorAll('.producto');
-    let desplazamiento = 0;
+    const productos = Array.from(document.querySelectorAll('.producto'));
+    const totalProductos = productos.length;
+
+    productos.forEach(producto => {
+        const cloneStart = producto.cloneNode(true);
+        const cloneEnd = producto.cloneNode(true);
+        ofertasContenedor.appendChild(cloneEnd);
+        ofertasContenedor.insertBefore(cloneStart, ofertasContenedor.firstChild);
+    });
+
+    const productoWidth = 220; 
+    let desplazamiento = -totalProductos * productoWidth; 
+    ofertasContenedor.style.transform = `translateX(${desplazamiento}px)`;
 
     document.getElementById('flechaDerecha').addEventListener('click', () => {
-        if (desplazamiento > -(productos.length - 4) * 100) {
-            desplazamiento -= 100;
-            ofertasContenedor.style.transform = `translateX(${desplazamiento}%)`;
+        desplazamiento -= productoWidth;
+        ofertasContenedor.style.transition = 'transform 0.3s ease';
+        ofertasContenedor.style.transform = `translateX(${desplazamiento}px)`;
+
+        if (desplazamiento <= -(totalProductos + totalProductos) * productoWidth) {
+            setTimeout(() => {
+                ofertasContenedor.style.transition = 'none';
+                desplazamiento = -totalProductos * productoWidth;
+                ofertasContenedor.style.transform = `translateX(${desplazamiento}px)`;
+            }, 300);
         }
     });
 
     document.getElementById('flechaIzquierda').addEventListener('click', () => {
-        if (desplazamiento < 0) {
-            desplazamiento += 100;
-            ofertasContenedor.style.transform = `translateX(${desplazamiento}%)`;
+        desplazamiento += productoWidth;
+        ofertasContenedor.style.transition = 'transform 0.3s ease';
+        ofertasContenedor.style.transform = `translateX(${desplazamiento}px)`;
+
+        if (desplazamiento >= 0) {
+            setTimeout(() => {
+                ofertasContenedor.style.transition = 'none';
+                desplazamiento = -totalProductos * productoWidth;
+                ofertasContenedor.style.transform = `translateX(${desplazamiento}px)`;
+            }, 300);
         }
     });
 });
