@@ -135,20 +135,22 @@ header {
 
 .ofertas-contenedor {
     display: flex;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    width: calc(4 * 220px);
+    overflow: hidden;
+    width: calc(4 * 220px); 
 }
 
 .producto {
-    background-color: white;
+    min-width: 200px; 
+    flex: 0 0 auto;
+    margin: 10px;
+    /*background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
     text-align: center;
     min-width: 200px;
     margin: 10px;
-    flex: 0 0 auto;
+    flex: 0 0 auto;*/
 }
 
 .producto img {
