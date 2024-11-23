@@ -52,16 +52,19 @@ document.addEventListener('DOMContentLoaded', function () {
         ofertasContenedor.insertBefore(cloneStart, ofertasContenedor.firstChild);
     });
 
-    const productoWidth = 220; 
+    const productoWidth = productos[0].offsetWidth + 20; 
+    const visibleProductos = 6; 
     let desplazamiento = -totalProductos * productoWidth; 
+    
     ofertasContenedor.style.transform = `translateX(${desplazamiento}px)`;
+
 
     document.getElementById('flechaDerecha').addEventListener('click', () => {
         desplazamiento -= productoWidth;
         ofertasContenedor.style.transition = 'transform 0.3s ease';
         ofertasContenedor.style.transform = `translateX(${desplazamiento}px)`;
 
-        if (desplazamiento <= -(totalProductos + totalProductos) * productoWidth) {
+        if (desplazamiento <= -(totalProductos + visibleProductos) * productoWidth) {
             setTimeout(() => {
                 ofertasContenedor.style.transition = 'none';
                 desplazamiento = -totalProductos * productoWidth;
@@ -78,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (desplazamiento >= 0) {
             setTimeout(() => {
                 ofertasContenedor.style.transition = 'none';
-                desplazamiento = -totalProductos * productoWidth;
+                desplazamiento = -(totalProductos + visibleProductos - 1) * productoWidth;
                 ofertasContenedor.style.transform = `translateX(${desplazamiento}px)`;
             }, 300);
         }
