@@ -136,17 +136,19 @@ header {
 .ofertas-contenedor {
     display: flex;
     overflow: hidden;
-    width: calc(4 * 220px); 
+    position: relative;
+    width: 100%;
 }
 
 .producto {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    text-align: center;
+    flex: 0 0 auto; 
     width: 200px;
-    margin: 10px;
+    margin: 10px; 
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: white;
+    transition: transform 0.3s ease;
 }
 
 .producto img {

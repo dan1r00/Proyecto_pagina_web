@@ -52,7 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
         ofertasContenedor.insertBefore(cloneStart, ofertasContenedor.firstChild);
     });
 
-    const productoWidth = productos[0].offsetWidth + 20; 
+    const productoWidth = document.querySelector('.producto').offsetWidth + 20; // Incluye márgenes
+/*const productoWidth = productos[0].offsetWidth + 20;*/ 
     const visibleProductos = 6; 
     let desplazamiento = -totalProductos * productoWidth; 
     
