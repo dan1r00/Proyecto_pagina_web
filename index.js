@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ofertasContenedor.style.transition = 'transform 0.3s ease';
         ofertasContenedor.style.transform = `translateX(${desplazamiento}px)`;
 
+        // Resetea cuando alcanza el final duplicado
         if (desplazamiento <= -(totalProductos + totalProductos) * productoWidth) {
             setTimeout(() => {
                 ofertasContenedor.style.transition = 'none';
