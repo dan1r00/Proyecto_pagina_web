@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Ventas</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
@@ -34,7 +37,7 @@
     <section class="bienvenida">
         <div class="bienvenida-texto">
             <p class="bienvenida-subtitulo">Bienvenidos</p>
-            <h1 class="bienvenida-titulo">Compra infinita</h1>
+            <h1 class="bienvenida-titulo">Compra ahora</h1>
             <p class="bienvenida-disponible">Disponible en todo Argentina</p>
             <button class="bienvenida-boton">Comprar ahora</button>
         </div>
@@ -48,49 +51,73 @@
         <div class="ofertas-navegacion">
             <button id="flechaIzquierda" class="ofertas-flecha">&#8249;</button>
             <div class="ofertas-contenedor">
-            <div class="producto">
-                <img src="6ce5b4884706531c542592ca2a56f305.jpg" alt="Producto 1">
-                <h3>Producto 1</h3>
-                <p>$100</p>
-                <button class="agregar-al-carrito" data-nombre="Producto1" data-precio="100">Agregar al carrito</button>
+                <div class="producto">
+                    <img src="6ce5b4884706531c542592ca2a56f305.jpg" alt="Producto 1">
+                    <h3>Remera</h3>
+                    <p>$100</p>
+                    <button class="agregar-al-carrito" data-nombre="Producto1" data-precio="100">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="d23126cf2322b3df525b516fc968380f.jpg" alt="Producto 2">
+                    <h3>Pantalon</h3>
+                    <p>$200</p>
+                    <button class="agregar-al-carrito" data-nombre="Producto2" data-precio="200">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="c11bb50d25cbac31dba82f0c83ccdbed.jpg" alt="Producto 3">
+                    <h3>Buzo</h3>
+                    <p>$300</p>
+                    <button class="agregar-al-carrito" data-nombre="Producto3" data-precio="300">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="8a2e73327345f4b9b4e85ac9aa17e5ae.jpg" alt="Producto 4">
+                    <h3>Zapatilla</h3>
+                    <p>$400</p>
+                    <button class="agregar-al-carrito" data-nombre="Producto4" data-precio="400">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="bc46c7f0d041cb66775ff22c108b5c6b.jpg" alt="Producto 5">
+                    <h3>Campera</h3>
+                    <p>$500</p>
+                    <button class="agregar-al-carrito" data-nombre="Producto5" data-precio="500">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="fc7fdeedd828bed7d4835028720901b5.jpg" alt="Producto 6">
+                    <h3>Guantes</h3>
+                    <p>$600</p>
+                    <button class="agregar-al-carrito" data-nombre="Producto6" data-precio="700">Agregar al carrito</button>
+                </div>
             </div>
-            <div class="producto">
-                <img src="d23126cf2322b3df525b516fc968380f.jpg" alt="Producto 2">
-                <h3>Producto 2</h3>
-                <p>$200</p>
-                <button class="agregar-al-carrito" data-nombre="Producto2" data-precio="200">Agregar al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="c11bb50d25cbac31dba82f0c83ccdbed.jpg" alt="Producto 3">
-                <h3>Producto 3</h3>
-                <p>$300</p>
-                <button class="agregar-al-carrito" data-nombre="Producto3" data-precio="300">Agregar al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="8a2e73327345f4b9b4e85ac9aa17e5ae.jpg" alt="Producto 4">
-                <h3>Producto 4</h3>
-                <p>$400</p>
-                <button class="agregar-al-carrito" data-nombre="Producto4" data-precio="400">Agregar al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="bc46c7f0d041cb66775ff22c108b5c6b.jpg" alt="Producto 5">
-                <h3>Producto 5</h3>
-                <p>$500</p>
-                <button class="agregar-al-carrito" data-nombre="Producto5" data-precio="500">Agregar al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="fc7fdeedd828bed7d4835028720901b5.jpg" alt="Producto 6">
-                <h3>Producto 6</h3>
-                <p>$600</p>
-                <button class="agregar-al-carrito" data-nombre="Producto6" data-precio="700">Agregar al carrito</button>
-            </div>
+            <button id="flechaDerecha" class="ofertas-flecha">&#8250;</button>
         </div>
-        <button id="flechaDerecha" class="ofertas-flecha">&#8250;</button>
     </section>
 
+    <ul class="socList">
+        <li data-text="Facebook">
+            <a data-color="#160080" href="https://www.facebook.com/@Tecnica35/" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        </li>
+        <li data-text="Website">
+            <a data-color="#fd0053" href="https://github.com/dan1r00/Proyecto_pagina_web" class="globe"><i class="fa fa-globe" aria-hidden="true"></i></a>
+        </li>
+        <li data-text="Instagram">
+            <a data-color="#E1306C" href="https://www.instagram.com/et.35.ing.eduardo.latzina/?hl=es" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        </li>
+    </ul>
+
+    <div class="popWrpr" id="pop">
+        <div class="popBg">
+            <div class="popContent">
+                <button aria-hidden="true" class="closePop" id="closePop">x</button>
+                <h2>Explore My Profile</h2>
+                <p>I am a man of my word (not many, though). My work is my passion.</p>
+                <a class="profileBtn" target="_blank" href="https://runyoursite.in/" title="Know more about me">Check Now</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.min.js"></script>
     <script src="index.js"></script>
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </body>
 </html>

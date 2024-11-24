@@ -1,90 +1,78 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const cartItems = document.getElementById('cart-items');
-    const total = document.getElementById('total');
+$(document).ready(function(){
+    const cartItems = $('#cart-items');
+    const total = $('#total');
     let cart = [];
 
-    document.querySelectorAll('.agregar-al-carrito').forEach(button => {
-        button.addEventListener('click', () => {
-            const name = button.dataset.nombre;
-            const price = parseFloat(button.dataset.precio || 0);
+    $('.agregar-al-carrito').on('click', function() {
+        const name = $(this).data('nombre');
+        const price = parseFloat($(this).data('precio') || 0);
 
-            cart.push({ name, price });
-            updateCart();
-        });
+        cart.push({ name, price });
+        updateCart();
     });
 
     function updateCart() {
-        cartItems.innerHTML = '';
+        cartItems.empty();
         let totalPrice = 0;
 
         cart.forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = `${item.name} - $${item.price}`;
-            cartItems.appendChild(li);
+            const li = $('<li>').text(`${item.name} - $${item.price}`);
+            cartItems.append(li);
             totalPrice += item.price;
         });
 
-        total.textContent = totalPrice.toFixed(2);
+        total.text(totalPrice.toFixed(2));
     }
 
-    document.getElementById('search').addEventListener('input', function (event) {
+    $('#search').on('input', function(event) {
         const searchTerm = event.target.value.toLowerCase();
-        const products = document.querySelectorAll('.producto');
+        const products = $('.producto');
 
-        products.forEach(product => {
-            const productName = product.querySelector('h3').textContent.toLowerCase();
+        products.each(function() {
+            const productName = $(this).find('h3').text().toLowerCase();
             if (productName.includes(searchTerm)) {
-                product.style.display = 'block';
+                $(this).show();
             } else {
-                product.style.display = 'none';
+                $(this).hide();
             }
         });
     });
 
-    const ofertasContenedor = document.querySelector('.ofertas-contenedor');
-    const productos = Array.from(document.querySelectorAll('.producto'));
-    const totalProductos = productos.length;
-
-    productos.forEach(producto => {
-        const cloneStart = producto.cloneNode(true);
-        const cloneEnd = producto.cloneNode(true);
-        ofertasContenedor.appendChild(cloneEnd);
-        ofertasContenedor.insertBefore(cloneStart, ofertasContenedor.firstChild);
+    $('.ofertas-contenedor').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        prevArrow: '#flechaIzquierda',
+        nextArrow: '#flechaDerecha'
     });
 
-    const productoWidth = document.querySelector('.producto').offsetWidth + 20; // Incluye márgenes
-/*const productoWidth = productos[0].offsetWidth + 20;*/ 
-    const visibleProductos = 6; 
-    let desplazamiento = -totalProductos * productoWidth; 
-    
-    ofertasContenedor.style.transform = `translateX(${desplazamiento}px)`;
+    let target = document.querySelectorAll('.socList>li>a');
 
-
-    document.getElementById('flechaDerecha').addEventListener('click', () => {
-        desplazamiento -= productoWidth;
-        ofertasContenedor.style.transition = 'transform 0.3s ease';
-        ofertasContenedor.style.transform = `translateX(${desplazamiento}px)`;
-
-        if (desplazamiento <= -(totalProductos + visibleProductos) * productoWidth) {
-            setTimeout(() => {
-                ofertasContenedor.style.transition = 'none';
-                desplazamiento = -totalProductos * productoWidth;
-                ofertasContenedor.style.transform = `translateX(${desplazamiento}px)`;
-            }, 300);
-        }
+    target.forEach(ele => {
+        ele.addEventListener('mouseenter', function(event) {
+            let color = event.target.getAttribute('data-color');
+            document.getElementsByTagName('body')[0].style.backgroundColor = color;
+        });
     });
 
-    document.getElementById('flechaIzquierda').addEventListener('click', () => {
-        desplazamiento += productoWidth;
-        ofertasContenedor.style.transition = 'transform 0.3s ease';
-        ofertasContenedor.style.transform = `translateX(${desplazamiento}px)`;
+    target.forEach(ele => {
+        ele.addEventListener('mouseleave', function(event) {
+            document.getElementsByTagName('body')[0].style.backgroundColor = '#fff';
+        });
+    });
 
-        if (desplazamiento >= 0) {
-            setTimeout(() => {
-                ofertasContenedor.style.transition = 'none';
-                desplazamiento = -(totalProductos + visibleProductos - 1) * productoWidth;
-                ofertasContenedor.style.transform = `translateX(${desplazamiento}px)`;
-            }, 300);
-        }
+    VanillaTilt.init(document.querySelectorAll(".socList li>a"), {
+        max: 30,
+        speed: 100,
+        glare: true,
+        "max-glare": 0.65
+    });
+
+    setTimeout(function(){
+        document.getElementById('pop').classList.add('active');
+    }, 10000);
+
+    document.getElementById('closePop').addEventListener('click', function(){
+        document.getElementById('pop').classList.remove('active');
     });
 });
