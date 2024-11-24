@@ -1,12 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ListaDeProductos from './components/ListaDeProductos';
+import ProductoDetalle from './components/ProductoDetalle';
 
 const App = () => {
     return (
-        <div>
-            <h1>Productos</h1>
-            <ListaDeProductos />
-        </div>
+        <Router>
+            <Switch>
+                <Route path="/" exact component={ListaDeProductos} />
+                <Route path="/producto/:id" component={ProductoDetalle} />
+            </Switch>
+        </Router>
     );
 };
 
