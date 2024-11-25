@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { products } from "../data";
+import { products } from "/workspaces/Proyecto_pagina_web/mi-tienda/src/data.js";
 
 const Home = () => {
   return (

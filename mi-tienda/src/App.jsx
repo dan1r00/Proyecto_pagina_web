@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import ProductPage from "./pages/ProductPage"; 
+import Home from "./workspaces/Proyecto_pagina_web/mi-tienda/src/pages/Home.js";
+import ProductPage from "/workspaces/Proyecto_pagina_web/mi-tienda/src/pages/ProductPage.js"; 
 const App = () => {
   return (
     <Router>
