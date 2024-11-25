@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guantes - PPW AR</title>
+    <title>Carrito de Compras - PPW AR</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -31,18 +31,12 @@
         </nav>
     </header>
 
-    <section class="producto-detalle">
-        <div class="producto-imagen">
-            <img src="fc7fdeedd828bed7d4835028720901b5.jpg" alt="Guantes">
-        </div>
-        <div class="producto-info">
-            <h1>Guantes</h1>
-            <p>Precio: $600</p>
-            <p>Protege tus manos con estilo y comodidad gracias a estos guantes. Diseñados para ofrecer un ajuste perfecto, están confeccionados con materiales cálidos y duraderos. Ideales para el invierno o actividades al aire libre, te brindarán la máxima protección sin comprometer el estilo.</p>
-            <button class="agregar-al-carrito" data-nombre="Guantes" data-precio="600">Agregar al carrito</button>
-            <br><br>
-            <a href="index.html" class="volver-inicio">Volver al Inicio</a>
-        </div>
+    <section class="carrito-detalle">
+        <h1>Carrito de Compras</h1>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="total">0.00</span></p>
+        <br><br>
+        <a href="index.html" class="volver-inicio">Volver al Inicio</a>
     </section>
 
     <script src="index.js"></script>
