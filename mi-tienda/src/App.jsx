@@ -1,17 +1,16 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ListaDeProductos from './components/ListaDeProductos';
-import ProductoDetalle from './components/ProductoDetalle';
-
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import ProductPage from "./pages/ProductPage"; 
 const App = () => {
-    return (
-        <Router>
-            <Switch>
-                <Route path="/" exact component={ListaDeProductos} />
-                <Route path="/producto/:id" component={ProductoDetalle} />
-            </Switch>
-        </Router>
-    );
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} /> {}
+        <Route path="/product/:id" element={<ProductPage />} /> {}
+      </Routes>
+    </Router>
+  );
 };
 
 export default App;
