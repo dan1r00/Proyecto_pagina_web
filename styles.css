@@ -397,3 +397,17 @@ header {
     border-radius: 5px;
     cursor: pointer;
 }
+.ver-producto {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #43C6AC;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.ver-producto:hover {
+    background-color: #191654;
+}
