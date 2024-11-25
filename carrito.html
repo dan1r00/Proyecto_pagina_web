@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Compras - PPW AR</title>
+    <title>Carrito de Compras</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,29 +19,55 @@
                 <li><a href="ofertas.html">Ofertas</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
-            <div class="iconos-derecha">
-                <div class="search-container">
-                    <input type="text" id="search" placeholder="Buscar productos..." />
-                    <button class="search-button">🔍</button>
-                </div>
-                <div class="carrito-icon">
-                    <a href="carrito.html">
-                        <img src="png-transparent-shopping-cart-icon-shopping-cart-black-design-trade.png" alt="Carrito de Compras">
-                    </a>
-                </div>
-            </div>
         </nav>
     </header>
 
-    <section class="carrito-detalle">
+    <main>
         <h1>Carrito de Compras</h1>
-        <ul id="cart-items"></ul>
-        <p>Total: $<span id="total">0.00</span></p>
-        <br><br>
-        <a href="index.html" class="volver-inicio">Volver al Inicio</a>
-    </section>
+        <div id="carrito-container"></div>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+        <a href="productos.html" class="btn">Continuar Comprando</a>
+    </main>
 
-    <script src="index.js"></script>
+    <script>
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        const carritoContainer = document.getElementById("carrito-container");
+        const vaciarCarritoBtn = document.getElementById("vaciar-carrito");
+
+        function renderizarCarrito() {
+            carritoContainer.innerHTML = "";
+            if (carrito.length === 0) {
+                carritoContainer.innerHTML = "<p>Tu carrito está vacío.</p>";
+                return;
+            }
+            carrito.forEach((producto, index) => {
+                const item = document.createElement("div");
+                item.classList.add("carrito-item");
+                item.innerHTML = `
+                    <span>${producto.nombre} - $${producto.precio}</span>
+                    <button data-index="${index}" class="eliminar-producto">Eliminar</button>
+                `;
+                carritoContainer.appendChild(item);
+            });
+
+            document.querySelectorAll(".eliminar-producto").forEach((boton) => {
+                boton.addEventListener("click", eliminarProducto);
+            });
+        }
+
+        function eliminarProducto(event) {
+            const index = event.target.dataset.index;
+            carrito.splice(index, 1);
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            renderizarCarrito();
+        }
+
+        vaciarCarritoBtn.addEventListener("click", () => {
+            localStorage.removeItem("carrito");
+            renderizarCarrito();
+        });
+
+        renderizarCarrito();
+    </script>
 </body>
 </html>
-

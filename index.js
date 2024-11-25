@@ -80,3 +80,24 @@ $(document).ready(function(){
     });
 });
 
+const botonesAgregar = document.querySelectorAll(".agregar-al-carrito");
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+function agregarAlCarrito(event) {
+    const boton = event.target;
+    const nombre = boton.dataset.nombre;
+    const precio = parseFloat(boton.dataset.precio);
+
+    const producto = { nombre, precio };
+
+    carrito.push(producto);
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    alert(`"${nombre}" se añadió al carrito.`);
+}
+
+botonesAgregar.forEach((boton) => {
+    boton.addEventListener("click", agregarAlCarrito);
+});
