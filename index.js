@@ -1,13 +1,14 @@
 $(document).ready(function(){
     const cartItems = $('#cart-items');
     const total = $('#total');
-    let cart = [];
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     $('.agregar-al-carrito').on('click', function() {
         const name = $(this).data('nombre');
         const price = parseFloat($(this).data('precio') || 0);
 
         cart.push({ name, price });
+        localStorage.setItem('cart', JSON.stringify(cart));
         updateCart();
     });
 
@@ -23,6 +24,8 @@ $(document).ready(function(){
 
         total.text(totalPrice.toFixed(2));
     }
+
+    updateCart();
 
     $('#search').on('input', function(event) {
         const searchTerm = event.target.value.toLowerCase();
@@ -76,3 +79,4 @@ $(document).ready(function(){
         document.getElementById('pop').classList.remove('active');
     });
 });
+
