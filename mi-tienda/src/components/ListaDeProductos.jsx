@@ -13,7 +13,7 @@ const ListaDeProductos = () => {
     return (
         <div className="productos-lista">
             {productos.map(producto => (
-               <Producto key={producto.id} id={producto.id} nombre={producto.nombre} precio={producto.precio} imagen={producto.imagen} />
+                <Producto key={producto.id} id={producto.id} nombre={producto.nombre} precio={producto.precio} imagen={producto.imagen} />
             ))}
         </div>
     );
