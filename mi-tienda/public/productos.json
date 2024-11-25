@@ -1,5 +1,11 @@
 [
-    { "id": 1, "nombre": "Remera", "precio": 100, "imagen": "producto1.jpg" },
+    {
+        "id": 1,
+        "nombre": "Remera",
+        "precio": 100,
+        "imagen": "producto1.jpg",
+        "descripcion": "Esta remera combina estilo y comodidad en un diseño único. Fabricada con materiales de alta calidad, es perfecta para cualquier ocasión, desde salidas casuales hasta momentos de relax en casa. Su corte moderno y ajuste ideal se adaptan a tu estilo, brindándote un look fresco y versátil. ¡Añade esta prenda esencial a tu guardarropa hoy mismo!"
+    },
     { "id": 2, "nombre": "Pantalón", "precio": 200, "imagen": "producto2.jpg" },
     { "id": 3, "nombre": "Buzo", "precio": 300, "imagen": "producto3.jpg" },
     { "id": 4, "nombre": "Zapatilla", "precio": 400, "imagen": "producto4.jpg" },
