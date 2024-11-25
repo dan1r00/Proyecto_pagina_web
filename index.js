@@ -84,6 +84,10 @@ const botonesAgregar = document.querySelectorAll(".agregar-al-carrito");
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+function guardarCarrito() {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
 function agregarAlCarrito(event) {
     const boton = event.target;
     const nombre = boton.dataset.nombre;
@@ -93,11 +97,54 @@ function agregarAlCarrito(event) {
 
     carrito.push(producto);
 
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+    guardarCarrito();
 
     alert(`"${nombre}" se añadió al carrito.`);
 }
 
-botonesAgregar.forEach((boton) => {
+function mostrarCarrito() {
+    const carritoModal = document.getElementById("carrito-modal");
+    const carritoContenido = document.getElementById("carrito-contenido");
+
+    carritoContenido.innerHTML = ""; 
+
+    if (carrito.length === 0) {
+        carritoContenido.innerHTML = "<p>Tu carrito está vacío.</p>";
+    } else {
+        carrito.forEach((producto, index) => {
+            const item = document.createElement("div");
+            item.classList.add("carrito-item");
+            item.innerHTML = `
+                <span>${producto.nombre} - $${producto.precio}</span>
+                <button data-index="${index}" class="eliminar-producto">Eliminar</button>
+            `;
+            carritoContenido.appendChild(item);
+        });
+
+        document.querySelectorAll(".eliminar-producto").forEach((boton) => {
+            boton.addEventListener("click", eliminarProducto);
+        });
+    }
+
+    carritoModal.style.display = "block";
+}
+
+function eliminarProducto(event) {
+    const index = event.target.dataset.index;
+    carrito.splice(index, 1); 
+    guardarCarrito(); 
+    mostrarCarrito(); 
+}
+
+function cerrarCarrito() {
+    const carritoModal = document.getElementById("carrito-modal");
+    carritoModal.style.display = "none";
+}
+
+document.querySelectorAll(".agregar-al-carrito").forEach((boton) => {
     boton.addEventListener("click", agregarAlCarrito);
 });
+
+document.querySelector(".carrito-icon").addEventListener("click", mostrarCarrito);
+
+document.getElementById("cerrar-carrito").addEventListener("click", cerrarCarrito);
