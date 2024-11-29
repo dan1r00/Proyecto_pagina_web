@@ -55,7 +55,7 @@ $(document).ready(function () {
 
     $('.ofertas-contenedor').slick({
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         prevArrow: '#flechaIzquierda',
         nextArrow: '#flechaDerecha',
@@ -71,6 +71,12 @@ $(document).ready(function () {
 
     updateCart();
 });
+$(document).on('click', function (event) {
+    if ($(event.target).is('#carrito-modal')) {
+        $('#carrito-modal').hide();
+    }
+});
+
 /*$(document).ready(function () {
     const cartItems = $('#cart-items');
     const total = $('#total');
