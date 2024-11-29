@@ -1,5 +1,4 @@
-const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
+/*const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const carritoContainer = document.getElementById("carrito-container");
 const vaciarCarritoBtn = document.getElementById("vaciar-carrito");
@@ -86,8 +85,8 @@ function renderizarProductos() {
 }
 
 renderizarCarrito();
-renderizarProductos();
-/*$(document).ready(function () {
+renderizarProductos();*/
+$(document).ready(function () {
     const cartItems = $('#cart-items'); 
     const total = $('#total'); 
     let cart = JSON.parse(localStorage.getItem('cart')) || []; 
