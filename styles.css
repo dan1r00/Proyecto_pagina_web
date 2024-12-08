@@ -521,13 +521,28 @@ header {
     text-align: center;
     margin: 50px 0;
     padding: 20px;
-    background-color: #1a1a1a;
+    background: #8e9eab;
+    background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
+    background: linear-gradient(to right, #eef2f3, #8e9eab);
+    animation: moveBackground 3s ease-in-out infinite alternate;
+    background-size: 400% 400%;
     color: white;
+    border-radius: 10px;
+  }
+  
+  @keyframes moveBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
   }
   
   .categorias h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   
   .categorias-container {
@@ -541,8 +556,15 @@ header {
     border-radius: 10px;
     overflow: hidden;
     width: 200px;
-    background-color: #2a2a2a;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .categoria:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
   }
   
   .categoria img {
@@ -554,5 +576,6 @@ header {
   .categoria p {
     margin-top: 10px;
     font-size: 1rem;
+    color: #fff;
   }
   
