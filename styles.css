@@ -517,3 +517,42 @@ header {
 .boton:hover {
     background-color: #5752d9;
 }
+.categorias {
+    text-align: center;
+    margin: 50px 0;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: white;
+  }
+  
+  .categorias h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .categorias-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .categoria {
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    background-color: #2a2a2a;
+    padding: 10px;
+  }
+  
+  .categoria img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .categoria p {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+  
