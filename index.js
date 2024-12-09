@@ -149,12 +149,12 @@ $(document).ready(function () {
     });
 
     $('.carrito-icon').on('click', function () {
-        $('#carrito-modal').show();
+        $('#carrito-modal').toggleClass('hidden');
     });
-
+    
     $('#cerrar-carrito').on('click', function () {
-        $('#carrito-modal').hide();
-    });
+        $('#carrito-modal').addClass('hidden');
+    });    
 
     updateCart();
 });
