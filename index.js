@@ -163,6 +163,25 @@ $(document).on('click', function (event) {
         $('#carrito-modal').hide();
     }
 });
+const botonesAgregar = document.querySelectorAll('.agregar-al-carrito');
+
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+botonesAgregar.forEach((boton) => {
+    boton.addEventListener('click', () => {
+        const nombre = boton.getAttribute('data-nombre');
+        const precio = parseFloat(boton.getAttribute('data-precio'));
+
+        const producto = { nombre, precio };
+
+        carrito.push(producto);
+
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+
+        alert(`${nombre} fue agregado al carrito.`);
+    });
+});
+
 ---------------2------------------*/
 /*$(document).ready(function () {
     const cartItems = $('#cart-items');

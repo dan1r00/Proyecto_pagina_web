@@ -488,6 +488,10 @@ header {
     background-color: #191654;
 }
 
+.hidden {
+    display: none;
+}
+
 #carrito-modal {
     position: fixed;
     top: 0;
@@ -518,20 +522,6 @@ header {
     border-radius: 5px;
     width: 300px;
     text-align: center;
-}
-
-.cerrar-modal {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.cerrar-modal:hover,
-.cerrar-modal:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
 }
 
 .carrito-item {
