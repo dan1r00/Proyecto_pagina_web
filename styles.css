@@ -702,9 +702,8 @@ body.modo-oscuro footer {
     background: #8e9eab;
     background: -webkit-linear-gradient(to right, #A5CC82, #00467F);
     background: linear-gradient(to right, #A5CC82, #00467F);
-    animation: moveBackground 3s ease-in-out infinite alternate;
+    animation: moveBackground 2s ease-in-out infinite alternate;
     background-size: 400% 400%;
-    color: white;
     border-radius: 10px;
   }
   @keyframes moveBackground {
@@ -716,6 +715,21 @@ body.modo-oscuro footer {
     }
 }
 
-.producto-infoo p{
+.producto-infoo p {
     color: black;
+    font-size: 18px;  
+    font-weight: 600; 
+    line-height: 1.8; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+    letter-spacing: 1px; 
+}
+
+.producto-infoo h1 {
+    font-size: 28px;  
+    font-weight: bold;
+    color: white;  
+    text-transform: uppercase; 
+    letter-spacing: 2px;  
+    margin-bottom: 20px;
 }
