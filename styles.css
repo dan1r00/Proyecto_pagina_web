@@ -170,8 +170,12 @@ header {
 }
 .productos-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    box-sizing: border-box; 
 } 
 .productos-titulo {
     font-size: 2rem;
@@ -409,14 +413,14 @@ header {
     color: #333;
 }
 
-.producto-info .agregar-al-carrito {
+/*.producto-info .agregar-al-carrito {
     background-color: #43C6AC;
     border: none;
     color: white;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-}
+}*/
 .ver-producto {
     display: inline-block;
     margin-top: 10px;
@@ -649,4 +653,17 @@ header {
 }
 .carrito-detalle {
     text-align: center; 
+}
+.vestimenta-grid .producto {
+    background-color: #fff; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+    padding: 15px; 
+    transition: transform 0.2s ease-in-out; 
+    width: 200px; 
+    margin: 15px auto; 
+    margin-left: 20px; 
+    
 }
