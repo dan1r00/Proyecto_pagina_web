@@ -694,3 +694,28 @@ body.modo-oscuro .producto {
 body.modo-oscuro footer {
     background-color: #1e1e1e;
 }
+
+.producto-infoo{
+    text-align: center;
+    margin: 50px 0;
+    padding: 20px;
+    background: #8e9eab;
+    background: -webkit-linear-gradient(to right, #A5CC82, #00467F);
+    background: linear-gradient(to right, #A5CC82, #00467F);
+    animation: moveBackground 3s ease-in-out infinite alternate;
+    background-size: 400% 400%;
+    color: white;
+    border-radius: 10px;
+  }
+  @keyframes moveBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+}
+
+.producto-infoo p{
+    color: black;
+}
