@@ -667,3 +667,29 @@ header {
     margin-left: 20px; 
     
 }
+
+body.modo-oscuro {
+    background: #121212;
+    color: #ffffff;
+}
+
+body.modo-oscuro a {
+    color: #90caf9;
+}
+
+body.modo-oscuro header {
+    background-color: #1e1e1e;
+}
+
+body.modo-oscuro .productos {
+    background-color: #1e1e1e;
+}
+
+body.modo-oscuro .producto {
+    background-color: #2e2e2e;
+    border: 1px solid #444;
+}
+
+body.modo-oscuro footer {
+    background-color: #1e1e1e;
+}
