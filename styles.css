@@ -738,3 +738,33 @@ body.modo-oscuro footer {
     height: 30%;
     object-fit: cover; 
 }
+body.modo-oscuro .ofertas {
+    background: #2e2e2e;
+    color: #ffffff; 
+}
+
+body.modo-oscuro .ofertas-titulo {
+    color: #ffffff;
+}
+
+body.modo-oscuro .producto {
+    background: #444444; 
+    color: #ffffff;
+}
+
+body.modo-oscuro .producto h3 {
+    color: #ffffff;
+}
+
+body.modo-oscuro .producto p {
+    color: #b2f5e6;
+}
+
+body.modo-oscuro .categorias {
+    background: #2e2e2e; 
+    color: #ffffff; 
+}
+
+body.modo-oscuro .categorias h2 {
+    color: #ffffff;
+}
