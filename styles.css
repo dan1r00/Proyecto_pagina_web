@@ -371,6 +371,7 @@ header {
 }
 
 .volver-inicio {
+    justify-content: center;
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
@@ -479,6 +480,7 @@ header {
 }
 
 .volver-inicio {
+    justify-content: center;
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
@@ -622,7 +624,8 @@ header {
 
   }
   .volver-inicio {
-    display: block; 
+    justify-content: center;
+    display: inline-block;
     margin: 20px auto; 
     padding: 10px 20px;
     background-color: #43C6AC;
@@ -630,7 +633,6 @@ header {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    
 }
 .volver-inicio-ini {
     display: flex; 
@@ -696,25 +698,12 @@ body.modo-oscuro footer {
 }
 
 .producto-infoo{
-    text-align: center;
-    margin: 50px 0;
-    padding: 20px;
-    background: #8e9eab;
-    background: -webkit-linear-gradient(to right, #A5CC82, #00467F);
-    background: linear-gradient(to right, #A5CC82, #00467F);
-    animation: moveBackground 2s ease-in-out infinite alternate;
-    background-size: 400% 400%;
-    border-radius: 10px;
-  }
-  @keyframes moveBackground {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 100% 50%;
-    }
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    align-items: center;
+    justify-content: center; 
 }
-
 .producto-infoo p {
     color: black;
     font-size: 18px;  
@@ -733,11 +722,20 @@ body.modo-oscuro footer {
     letter-spacing: 2px;  
     margin-bottom: 20px;
 }
-.producto-imagenn img {
-    width: 30%;
-    height: 30%;
-    object-fit: cover; 
+.producto-imagenn {
+    display: flex;           
+    justify-content: center; 
+    align-items: center;     
+    width: 100%;             
+    height: 100%;            
 }
+
+.producto-imagenn img {
+    width: 30%;              
+    height: 30%;             
+    object-fit: cover;       
+}
+
 body.modo-oscuro .ofertas {
     background: #2e2e2e;
     color: #ffffff; 
@@ -771,4 +769,11 @@ body.modo-oscuro .categorias h2 {
 body.modo-oscuro .producto-infoo {
     background-color: #333; 
     color: #f9f9f9; 
+}
+
+.contenedor {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+    box-sizing: border-box;
 }

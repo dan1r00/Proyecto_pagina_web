@@ -1,5 +1,4 @@
 const toggleModoOscuro = document.getElementById('toggle-modo-oscuro');
-const body = document.body;
 toggleModoOscuro.addEventListener('click', () => {  
     document.body.classList.toggle('modo-oscuro');
 
