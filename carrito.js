@@ -4,17 +4,17 @@ const totalCarrito = document.getElementById('total');
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 function cargarCarrito() {
-    listaCarrito.innerHTML = '';
+    listaCarrito.innerHTML = ''; 
     let total = 0;
 
     carrito.forEach((producto, index) => {
         const li = document.createElement('li');
         li.innerHTML = `
-            ${producto.nombre} - $${producto.precio.toFixed(2)}
+            <img src="${producto.imagen}" alt="${producto.nombre}" class="imagen-carrito">
+            <span>${producto.nombre} - $${producto.precio.toFixed(2)}</span>
             <button class="eliminar-producto" data-index="${index}">Eliminar</button>
         `;
         listaCarrito.appendChild(li);
-
         total += producto.precio;
     });
 
@@ -23,9 +23,9 @@ function cargarCarrito() {
     document.querySelectorAll('.eliminar-producto').forEach((btn) => {
         btn.addEventListener('click', () => {
             const index = btn.getAttribute('data-index');
-            carrito.splice(index, 1);
-            localStorage.setItem('carrito', JSON.stringify(carrito));
-            cargarCarrito();
+            carrito.splice(index, 1); 
+            localStorage.setItem('carrito', JSON.stringify(carrito)); 
+            cargarCarrito(); 
         });
     });
 }
